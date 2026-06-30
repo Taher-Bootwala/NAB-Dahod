@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef6ff"/><stop offset="1" stop-color="#d9ecff"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f83f7"/><stop offset="1" stop-color="#1850b4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="220" fill="#5fd0c5" opacity="0.18"/>
+  <circle cx="160" cy="560" r="180" fill="#2f83f7" opacity="0.14"/>
+  <rect x="90" y="150" width="96" height="96" rx="26" fill="url(#mark)"/>
+  <path d="M108 198s10-20 30-20 30 20 30 20-10 20-30 20-30-20-30-20Z" fill="none" stroke="#fff" stroke-width="6"/>
+  <circle cx="138" cy="198" r="11" fill="#fff"/>
+  <text x="210" y="210" font-family="Inter, sans-serif" font-size="46" font-weight="800" fill="#1a3c74">Blind School Dahod</text>
+  <text x="92" y="330" font-family="Inter, sans-serif" font-size="62" font-weight="900" fill="#16233b">Empowering Visually Impaired</text>
+  <text x="92" y="410" font-family="Inter, sans-serif" font-size="62" font-weight="900" fill="#1b66e0">Students to Build Their Future</text>
+  <text x="92" y="480" font-family="Inter, sans-serif" font-size="30" font-weight="600" fill="#43526b">Braille literacy · Assistive technology · Life skills · Since 1998</text>
+</svg>

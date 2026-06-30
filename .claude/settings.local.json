@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php -v)",
+      "Bash(composer --version)",
+      "Read(//c/xampp/php/**)",
+      "Read(//c/laragon/bin/**)",
+      "Read(//c//**)",
+      "Bash(npm -v)",
+      "Bash(/c/xampp/php/php.exe -v)",
+      "Bash(/c/xampp/php/php.exe -m)",
+      "Bash(cp -n .env.example .env)",
+      "Bash(/c/xampp/php/php.exe -S localhost:8765 -t public public/router.php)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8765/)",
+      "Bash(curl -s http://localhost:8765/)",
+      "Bash(php -l public/admin/home_images.php)",
+      "Bash(php -l app/Repo.php)",
+      "Bash(php -l app/layout/header.php)",
+      "Bash(php -l app/layout/admin_header.php)",
+      "Bash(php -l public/index.php)",
+      "Bash(ls /c/xampp/php/php.exe)",
+      "Bash(ls \"/c/Program Files/php\"*/php.exe)",
+      "Bash(which php.exe)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(grep -n \"slider-dot\\\\[aria-current\\\\|const \\\\$\\\\$\\\\|const \\\\$ =\\\\|\\\\$\\\\$ =\\\\|function \\\\$\\\\$\" public/assets/js/app.js public/assets/css/global.css)",
+      "Bash(grep -n \"const \\\\$ =\\\\|\\\\$ = \\(\" public/assets/js/app.js)",
+      "Bash(grep -rn 'uploads\\\\|move_uploaded_file\\\\|uploadBinary\\\\|saveUpload\\\\|$_FILES\\\\|save_image\\\\|SUPABASE_BUCKET' app public/admin)",
+      "Bash(/c/xampp/php/php.exe -S localhost:8123 -t public public/router.php)",
+      "Bash(curl -s -i -c /tmp/cj.txt http://localhost:8123/admin/login.php)",
+      "Bash(curl -s -i -b /tmp/cj.txt -c /tmp/cj.txt -X POST -d \"username=admin&password=admin123\" http://localhost:8123/admin/login.php)",
+      "Bash(curl -s -i -b /tmp/cj.txt -X POST -d \"username=admin@blindschooldahod.org&password=admin@123\" http://localhost:8123/admin/login.php)",
+      "Bash(rm -f /tmp/cj2.txt)",
+      "Bash(curl -s -o /dev/null -b /tmp/cj2.txt -c /tmp/cj2.txt -X POST -d \"username=admin&password=admin123\" http://localhost:8123/admin/login.php)",
+      "Bash(curl -s -i -b /tmp/cj2.txt http://localhost:8123/admin/)",
+      "Bash(pkill -f \"localhost:8123\")",
+      "Bash(\"C:/xampp/php/php.exe\" -l public/index.php)"
+    ]
+  }
+}

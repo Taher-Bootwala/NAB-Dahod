@@ -1,0 +1,32 @@
+# Environment & secrets
+.env
+.env.local
+.env.production
+
+# Local JSON storage (offline mode)
+storage/*.json
+!storage/.gitkeep
+
+# Uploads
+public/uploads/
+!public/uploads/.gitkeep
+
+# IDE & editors
+.vscode/
+.idea/
+*.sublime-*
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# OS files
+*.swp
+*~
+.directory
+
+# PHP
+vendor/
+composer.lock

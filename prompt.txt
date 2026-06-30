@@ -1,0 +1,568 @@
+Build a premium modern full-stack website for Blind School Dahod (School for Visually Impaired Students in Dahod, Gujarat, India). The website should feel trustworthy, emotional, premium, accessible, and optimized for donations.
+
+Project Goal
+
+Create a highly modern NGO/school website that showcases the blind school’s mission, student activities, trustees, donation transparency, and allows visitors to donate online. Also build a hidden admin panel for content management.
+
+The website should NOT look like a traditional NGO website. It should feel premium like an Apple + modern startup website.
+
+Tech Stack (Use best modern stack)
+
+Frontend:
+
+PHP backend
+Tailwind CSS
+JavaScript
+React (Vite build only if needed)
+Supabase as external database
+API calls through PHP endpoints
+
+Backend:
+
+Supabase (PostgreSQL database)
+Supabase Auth
+Supabase Storage for images
+Supabase Edge Functions
+
+Payments:
+a normal qr image should popup 
+
+Design Language
+
+Use premium UI style mixing:
+
+Claymorphism
+
+Soft floating UI cards with subtle shadows.
+
+Skeuomorphism
+
+Realistic tactile buttons and layered elements.
+
+Glassmorphism (only subtle)
+
+Use slight blur for cards.
+
+Animations
+
+Heavy use of smooth animations.
+
+Must include:
+
+Smooth page transitions
+Scroll-triggered animations
+Parallax effects
+Hover depth effects
+Skeleton loading while fetching content
+Floating UI interactions
+Morphing buttons
+Animated counters
+Reveal animations
+Hero section motion graphics
+
+Overall feel:
+Apple + Stripe + Modern NGO + Premium SaaS.
+
+Color palette:
+
+Soft white background
+Light blue accents
+Accessible contrast colors
+Calm colors suitable for visually impaired school identity
+
+Typography:
+
+Inter
+Geist
+Large readable typography
+Important Accessibility Requirements
+
+Since website is for blind school:
+
+Implement accessibility-first design.
+
+Must include:
+
+Screen reader support
+ARIA labels everywhere
+Keyboard navigation
+High contrast mode toggle
+Text size increase/decrease button
+Voice assistant read page button
+Proper semantic HTML
+Large clickable buttons
+Focus indicators
+Skip navigation button
+
+Add:
+"Listen to this page" feature using Web Speech API.
+
+Website Pages
+1. HOME PAGE
+
+Create an emotional premium landing page.
+
+Sections:
+
+Hero Section
+
+Large hero animation.
+
+Background:
+Animated abstract flowing shapes.
+
+Content:
+"Empowering Visually Impaired Students to Build Their Future"
+
+Buttons:
+
+Donate Now
+Learn More
+
+Include:
+Animated children illustration.
+
+Stats counters:
+
+Students Supported
+Donations Received
+Years of Service
+Volunteers
+
+Use scroll reveal animations.
+
+Mission Section
+
+Animated cards.
+
+Content explaining:
+
+Education for blind children
+Skill development
+Independence training
+Equal opportunities
+
+Use claymorphism cards.
+
+Impact Section
+
+Large animated numbers.
+
+Example:
+
+500+ Students helped
+₹10L+ Donations received
+100+ Volunteers
+
+Counter animation on scroll.
+
+Testimonials
+
+Auto sliding testimonials.
+
+Include:
+Students
+Parents
+Volunteers
+
+Donation CTA
+
+Large premium donation section.
+
+Animated floating donation card.
+
+Buttons:
+
+Donate ₹100
+Donate ₹500
+Donate ₹1000
+Custom Amount
+
+Integrate Razorpay.
+
+2. ABOUT PAGE
+
+Sections:
+
+School history.
+
+Timeline animation.
+
+Mission and vision.
+
+Principal message.
+
+School objectives.
+
+Why this school exists.
+
+Animated vertical timeline.
+
+3. ACTIVITIES PAGE
+
+Dynamic content from database.
+
+Admin can upload.
+
+Each activity card contains:
+
+Activity title
+Description
+Date
+Images
+Category
+
+Examples:
+
+Sports day
+Braille learning
+Cultural events
+Computer learning
+Skill development workshops
+
+UI:
+Pinterest style card layout.
+
+Click card → opens full details page.
+
+Add search and filters.
+
+4. TRUSTEES PAGE
+
+Show all trustees.
+
+Each card contains:
+
+Photo
+Name
+Position
+Description
+Contact info (optional)
+
+Use premium glass cards.
+
+Hover animation:
+3D tilt effect.
+
+5. PHOTO GALLERY PAGE
+
+Dynamic from database.
+
+Admin uploads photos.
+
+Each photo contains:
+
+Image
+Title
+Description
+Event date
+
+Gallery style:
+Masonry grid.
+
+Features:
+
+Lightbox preview
+Smooth zoom animation
+Category filters
+
+Example categories:
+
+School activities
+Annual events
+Classroom learning
+Sports
+Festivals
+6. CONTACT PAGE
+
+Sections:
+
+Contact information.
+
+Google Maps embed.
+
+Address.
+
+Phone number.
+
+Email.
+
+Contact form fields:
+
+Name
+Email
+Phone
+Message
+
+Store inquiries in Supabase.
+
+Send confirmation email.
+
+Add WhatsApp floating button.
+
+7. DONATION PAGE
+
+Dedicated donation page.
+
+Allow:
+
+One-time donation.
+
+Preset amounts:
+
+₹100
+₹500
+₹1000
+₹5000
+
+Custom amount field.
+
+Show:
+
+Live donation progress bar.
+
+Recent donations feed.
+
+Total donation amount collected.
+
+Impact statement:
+
+“Your ₹500 can support educational materials for one student.”
+
+Generate donation receipt automatically.
+
+Store transaction details.
+
+Hidden Admin Panel
+
+Admin panel should NOT be visible publicly.
+
+Trigger:
+Long press logo for 5 seconds.
+
+Only then:
+Redirect to hidden admin login page.
+
+No normal navigation link.
+
+Admin Authentication
+
+Use Supabase Auth.
+
+Roles:
+
+Super Admin
+Admin
+
+Secure protected routes.
+
+Session management.
+
+JWT authentication.
+
+Admin Dashboard
+
+Beautiful premium dashboard.
+
+Sidebar navigation.
+
+Analytics cards.
+
+Charts.
+
+Skeleton loading.
+
+Dark mode support.
+
+Admin Features
+Manage Activities
+
+CRUD operations.
+
+Fields:
+
+Title
+Description
+Date
+Category
+Upload multiple images
+
+Store images in Supabase Storage.
+
+Manage Gallery
+
+Upload photos.
+
+Fields:
+
+Photo
+Title
+Description
+Category
+Date
+
+CRUD support.
+
+Manage Trustees
+
+Add:
+
+Name
+Photo
+Position
+Description
+
+Edit/Delete.
+
+Manage Donations
+
+Dashboard showing:
+
+Total donation amount
+Recent donors
+Monthly donations
+Payment status
+Failed payments
+Transaction history
+
+Charts:
+Monthly donation graph.
+
+Contact Queries
+
+Store all contact messages.
+
+Admin can:
+
+View messages
+Mark as resolved
+Delete messages
+CMS Control
+
+Admin can edit:
+
+Home page content
+About page content
+Mission statement
+Statistics numbers
+Footer details
+
+No code changes needed.
+
+Database Schema (Supabase)
+
+Tables:
+
+users
+
+id
+email
+role
+
+activities
+
+id
+title
+description
+category
+date
+images
+
+gallery
+
+id
+image_url
+title
+description
+category
+date
+
+trustees
+
+id
+name
+photo
+position
+description
+
+donations
+
+id
+donor_name
+email
+amount
+payment_status
+transaction_id
+created_at
+
+contact_messages
+
+id
+name
+email
+phone
+message
+status
+
+site_settings
+
+id
+key
+value
+Advanced Features
+
+Implement:
+
+PWA support
+Mobile responsive design
+SEO optimization
+Sitemap generation
+Fast loading
+Image lazy loading
+CDN optimization
+Skeleton loading everywhere
+Dark mode
+Animated page transitions
+Loading progress bar
+Back to top button
+Cookie consent
+Admin activity logs
+Audit trail
+Donation transparency page
+Security headers
+Rate limiting forms
+Form spam protection
+Image compression before upload
+Performance Requirements
+
+Lighthouse score above 95.
+
+Image optimization mandatory.
+
+Minimal bundle size.
+
+Lazy load components.
+
+Use server-side rendering where needed.
+
+Final Requirement
+
+The website should feel premium enough that it looks like a professionally built NGO website worth ₹1,00,000+.
+
+No basic layouts.
+
+No template-looking design.
+
+Every section should have smooth premium animation.
+
+Code should be production ready.
+
+Folder structure should be scalable.
+
+Write clean maintainable code.
+
+Build complete frontend + backend + database integration.
+
+No placeholders.
+
+Everything fully functional.
