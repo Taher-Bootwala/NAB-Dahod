@@ -27,13 +27,10 @@ require APP_DIR . '/layout/header.php';
         <?php endforeach; ?>
       </div>
       <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center" role="group" aria-label="Filter by date">
-        <label style="display:flex;align-items:center;gap:.4rem;color:var(--ink-mute);font-size:.85rem;font-weight:600">From
-          <input id="actFrom" type="date" class="field" style="padding:.5rem .7rem" aria-label="From date">
+        <label style="display:flex;align-items:center;gap:.4rem;color:var(--ink-mute);font-size:.85rem;font-weight:600">Date
+          <input id="actDate" type="date" class="field" style="padding:.5rem .7rem" aria-label="Filter by date">
         </label>
-        <label style="display:flex;align-items:center;gap:.4rem;color:var(--ink-mute);font-size:.85rem;font-weight:600">To
-          <input id="actTo" type="date" class="field" style="padding:.5rem .7rem" aria-label="To date">
-        </label>
-        <button id="actDateClear" type="button" class="btn btn-ghost" style="padding:.5rem .9rem;font-size:.85rem">Clear dates</button>
+        <button id="actDateClear" type="button" class="btn btn-ghost" style="padding:.5rem .9rem;font-size:.85rem">Clear date</button>
       </div>
     </div>
   </div>
@@ -76,10 +73,9 @@ require APP_DIR . '/layout/header.php';
   const empty = document.getElementById('actEmpty');
   const search = document.getElementById('actSearch');
   const filters = document.getElementById('actFilters');
-  const fromInp = document.getElementById('actFrom');
-  const toInp = document.getElementById('actTo');
+  const dateInp = document.getElementById('actDate');
   const dateClear = document.getElementById('actDateClear');
-  let cat = 'All', q = '', from = '', to = '', t;
+  let cat = 'All', q = '', date = '', t;
 
   function skeletons(n=6){ const tpl=document.getElementById('skelCard'); grid.innerHTML='';
     for(let i=0;i<n;i++) grid.appendChild(tpl.content.cloneNode(true)); }
@@ -104,8 +100,7 @@ require APP_DIR . '/layout/header.php';
       const url = `/api/content.php?type=activities&category=${encodeURIComponent(cat)}&search=${encodeURIComponent(q)}`;
       const r = await fetch(url); const data = await r.json();
       let items = data.items || [];
-      if (from) items = items.filter(a => (a.date||'').slice(0,10) >= from);
-      if (to)   items = items.filter(a => (a.date||'').slice(0,10) <= to);
+      if (date) items = items.filter(a => (a.date||'').slice(0,10) === date);
       grid.innerHTML='';
       if(!items.length){ empty.style.display='block'; return; }
       empty.style.display='none';
@@ -116,9 +111,8 @@ require APP_DIR . '/layout/header.php';
   filters.addEventListener('click', e=>{ const b=e.target.closest('[data-cat]'); if(!b)return;
     filters.querySelectorAll('[data-cat]').forEach(x=>x.classList.remove('active')); b.classList.add('active'); cat=b.dataset.cat; load(); });
   search.addEventListener('input', ()=>{ clearTimeout(t); t=setTimeout(()=>{ q=search.value.trim(); load(); }, 300); });
-  fromInp.addEventListener('change', ()=>{ from=fromInp.value; load(); });
-  toInp.addEventListener('change', ()=>{ to=toInp.value; load(); });
-  dateClear.addEventListener('click', ()=>{ from=''; to=''; fromInp.value=''; toInp.value=''; load(); });
+  dateInp.addEventListener('change', ()=>{ date=dateInp.value; load(); });
+  dateClear.addEventListener('click', ()=>{ date=''; dateInp.value=''; load(); });
 })();
 </script>
 

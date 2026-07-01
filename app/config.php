@@ -61,7 +61,7 @@ define('SITE_TAGLINE', 'Empowering Visually Impaired Students to Build Their Fut
 define('ORG_EMAIL', env('ORG_EMAIL', 'info@blindschooldahod.org'));
 define('ORG_PHONE', env('ORG_PHONE', '+91 99999 99999'));
 define('ORG_WHATSAPP', env('ORG_WHATSAPP', '919999999999'));
-define('ORG_ADDRESS', env('ORG_ADDRESS', 'Godhra Road, Dahod, Gujarat 389151, India'));
+define('ORG_ADDRESS', env('ORG_ADDRESS', 'Shrimati M B Jain Blind School, Dahod, Gujarat 389151, India'));
 
 /* ---- Donation ---- */
 define('UPI_ID', env('UPI_ID', 'merchant331865.augp@aubank'));

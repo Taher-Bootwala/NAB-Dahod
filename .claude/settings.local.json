@@ -33,7 +33,8 @@
       "Bash(curl -s -o /dev/null -b /tmp/cj2.txt -c /tmp/cj2.txt -X POST -d \"username=admin&password=admin123\" http://localhost:8123/admin/login.php)",
       "Bash(curl -s -i -b /tmp/cj2.txt http://localhost:8123/admin/)",
       "Bash(pkill -f \"localhost:8123\")",
-      "Bash(\"C:/xampp/php/php.exe\" -l public/index.php)"
+      "Bash(\"C:/xampp/php/php.exe\" -l public/index.php)",
+      "Bash(curl -sI \"https://maps.app.goo.gl/fDKBNX89xvwqXJRB8\")"
     ]
   }
 }

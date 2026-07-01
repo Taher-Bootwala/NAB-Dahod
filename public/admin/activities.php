@@ -61,20 +61,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $categories = $repo->activityCategories();
 $activities = $repo->activities();
 
-// List filters (search + category + date range)
+// List filters (search + category + date)
 $q    = trim($_GET['q'] ?? '');
 $cat  = trim($_GET['cat'] ?? '');
-$from = trim($_GET['from'] ?? '');
-$to   = trim($_GET['to'] ?? '');
+$date = trim($_GET['date'] ?? '');
 $totalCount = count($activities);
 if ($cat !== '' && $cat !== 'All') {
     $activities = array_values(array_filter($activities, fn($a) => ($a['category'] ?? '') === $cat));
 }
-if ($from !== '') {
-    $activities = array_values(array_filter($activities, fn($a) => substr((string)($a['date'] ?? ''), 0, 10) >= $from));
-}
-if ($to !== '') {
-    $activities = array_values(array_filter($activities, fn($a) => substr((string)($a['date'] ?? ''), 0, 10) <= $to));
+if ($date !== '') {
+    $activities = array_values(array_filter($activities, fn($a) => substr((string)($a['date'] ?? ''), 0, 10) === $date));
 }
 if ($q !== '') {
     $ql = mb_strtolower($q);
@@ -84,7 +80,7 @@ if ($q !== '') {
         str_contains(mb_strtolower($a['category'] ?? ''), $ql)
     ));
 }
-$filtered = $q !== '' || ($cat !== '' && $cat !== 'All') || $from !== '' || $to !== '';
+$filtered = $q !== '' || ($cat !== '' && $cat !== 'All') || $date !== '';
 
 $edit = ($action === 'edit' && $id) ? $repo->activity($id) : null;
 
@@ -117,11 +113,8 @@ require APP_DIR . '/layout/admin_header.php';
     <option value="<?= e($c) ?>" <?= $cat === $c ? 'selected' : '' ?>><?= e($c) ?></option>
     <?php endforeach ?>
   </select>
-  <label style="display:flex;align-items:center;gap:.4rem;color:var(--ink-mute);font-size:.85rem;font-weight:600">From
-    <input class="field" type="date" name="from" value="<?= e($from) ?>" style="max-width:160px" onchange="this.form.submit()">
-  </label>
-  <label style="display:flex;align-items:center;gap:.4rem;color:var(--ink-mute);font-size:.85rem;font-weight:600">To
-    <input class="field" type="date" name="to" value="<?= e($to) ?>" style="max-width:160px" onchange="this.form.submit()">
+  <label style="display:flex;align-items:center;gap:.4rem;color:var(--ink-mute);font-size:.85rem;font-weight:600">Date
+    <input class="field" type="date" name="date" value="<?= e($date) ?>" style="max-width:170px" onchange="this.form.submit()">
   </label>
   <button type="submit" class="btn"><?= icon('search','w-4 h-4') ?> Search</button>
   <?php if ($filtered): ?><a href="?" class="btn btn-ghost">Clear</a><?php endif ?>

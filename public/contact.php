@@ -2,7 +2,8 @@
 require __DIR__ . '/../app/bootstrap.php';
 $page = ['title' => 'Contact', 'nav' => 'contact', 'desc' => 'Get in touch with National Association for the Blind Dahod — address, phone, email and enquiry form.'];
 require APP_DIR . '/layout/header.php';
-$mapsQuery = rawurlencode(ORG_ADDRESS);
+$mapsLink = 'https://maps.app.goo.gl/fDKBNX89xvwqXJRB8';
+$mapsEmbed = 'https://www.google.com/maps?q=22.8600089,74.2311628&output=embed';
 ?>
 <section class="section" style="padding-bottom:1rem">
   <div class="container">
@@ -27,10 +28,10 @@ $mapsQuery = rawurlencode(ORG_ADDRESS);
           <div style="display:grid;place-items:center;width:50px;height:50px;border-radius:14px;background:#e6fbf7;flex:none"><?= icon('mail','w-6 h-6',['style'=>'color:#2a9d8f']) ?></div>
           <div><div class="muted" style="font-size:.82rem">Email us</div><strong><?= e(ORG_EMAIL) ?></strong></div>
         </a>
-        <div class="clay" style="display:flex;gap:1rem;align-items:flex-start;padding:1.3rem">
+        <a href="<?= e($mapsLink) ?>" target="_blank" rel="noopener" class="clay card-hover" style="display:flex;gap:1rem;align-items:flex-start;padding:1.3rem;text-decoration:none;color:inherit">
           <div style="display:grid;place-items:center;width:50px;height:50px;border-radius:14px;background:#fff3e6;flex:none"><?= icon('map-pin','w-6 h-6',['style'=>'color:#f59324']) ?></div>
           <div><div class="muted" style="font-size:.82rem">Visit us</div><strong><?= e(ORG_ADDRESS) ?></strong></div>
-        </div>
+        </a>
         <a href="https://wa.me/<?= e(ORG_WHATSAPP) ?>" target="_blank" rel="noopener" class="clay card-hover" style="display:flex;gap:1rem;align-items:center;padding:1.3rem;text-decoration:none;color:inherit">
           <div style="display:grid;place-items:center;width:50px;height:50px;border-radius:14px;background:#e7faef;flex:none"><?= icon('whatsapp','w-6 h-6',['style'=>'color:#25d366']) ?></div>
           <div><div class="muted" style="font-size:.82rem">Chat instantly</div><strong>WhatsApp us</strong></div>
@@ -39,7 +40,7 @@ $mapsQuery = rawurlencode(ORG_ADDRESS);
 
       <div class="clay" style="margin-top:1.2rem;padding:.5rem;border-radius:var(--radius);overflow:hidden">
         <iframe title="Map to <?= e(SITE_NAME) ?>" width="100%" height="260" style="border:0;border-radius:18px;display:block" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=<?= $mapsQuery ?>&output=embed"></iframe>
+          src="<?= e($mapsEmbed) ?>"></iframe>
       </div>
     </div>
 

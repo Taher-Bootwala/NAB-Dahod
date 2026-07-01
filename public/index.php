@@ -30,20 +30,20 @@ require APP_DIR . '/layout/header.php';
 
 <!-- ============== HERO ============== -->
 <section class="section" style="padding-top:1.6rem;overflow:hidden">
-  <div class="container" style="display:grid;gap:2.5rem;grid-template-columns:1.05fr .95fr;align-items:center">
-    <div class="reveal">
+  <div class="container center" style="display:flex;flex-direction:column;align-items:center;gap:2.5rem;text-align:center">
+    <div class="reveal" style="max-width:760px">
       <span class="eyebrow"><?= icon('sparkle','w-4 h-4') ?> Serving Dahod since 1998</span>
       <h1 style="margin-top:1rem">
         Empowering <span class="grad-text">Visually Impaired</span> Students to Build Their Future
       </h1>
-      <p class="lead" style="margin-top:1.2rem"><?= e($s['hero_subtitle'] ?? '') ?></p>
+      <p class="lead" style="margin-top:1.2rem;margin-inline:auto"><?= e($s['hero_subtitle'] ?? '') ?></p>
 
-      <div style="display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.8rem">
+      <div style="display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.8rem;justify-content:center">
         <a href="/donate.php" class="btn btn-lg btn-morph"><?= icon('heart','w-5 h-5') ?> Donate Now</a>
         <a href="/about.php" class="btn btn-lg btn-ghost"><?= icon('arrow-right','w-5 h-5') ?> Learn More</a>
       </div>
 
-      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem;align-items:center">
+      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem;align-items:center;justify-content:center">
         <div style="display:flex;align-items:center;gap:.5rem;color:var(--ink-soft);font-weight:600"><?= icon('shield','w-5 h-5',['style'=>'color:var(--brand-600)']) ?> 80G Tax Benefit</div>
       </div>
     </div>
