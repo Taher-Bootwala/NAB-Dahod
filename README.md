@@ -15,60 +15,6 @@ Opens http://localhost:8000
 php -S localhost:8000 -t public public\router.php
 ```
 
-## Admin Panel Access
-
-Visit: http://localhost:8000/admin/login.php
-
-### Demo Credentials
-- **Username**: `admin` (or the admin email `admin@blindschooldahod.org`)
-- **Password**: `admin123`
-
-> Credentials come from `.env` (`ADMIN_USERNAME`, `ADMIN_DEMO_PASSWORD`, `ADMIN_EMAIL`). Change them before production.
-
-## Admin Features
-
-### Dashboard (`/admin/`)
-- View donation statistics
-- Recent activities
-- Recent donations
-- Contact messages overview
-
-### Activities Management (`/admin/activities.php`)
-- Create, edit, delete activities
-- Upload multiple images
-- Set category and date
-- Full CRUD operations
-
-### Gallery Management (`/admin/gallery.php`)
-- Add photos with titles and descriptions
-- Organize by categories
-- Grid view with thumbnails
-- Full CRUD operations
-
-### Trustees Management (`/admin/trustees.php`)
-- Add/edit trustees
-- Photo, name, position, bio
-- Display order management
-
-### Donations Viewer (`/admin/donations.php`)
-- View all donations
-- Filter by status (pending/success/failed)
-- Total statistics
-- Receipt numbers
-
-### Contact Messages (`/admin/messages.php`)
-- View all contact form submissions
-- Mark as read/delete
-- Email and phone info
-
-### Site Content Editor (`/admin/content.php`)
-- Edit hero section text
-- Update statistics (students, donations, years, volunteers)
-- Modify about page content
-- Change mission statement
-- Update footer text
-- **No code changes needed!**
-
 ## Database
 
 ### Offline Mode (Default)
